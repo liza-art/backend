@@ -1,8 +1,6 @@
 function sumArray(n) {
-  console.log("RUNNING: ");
   let sum = 0;
   for (let i = 0; i < n.length; i++) {
-    //console.log(n[i]);
     sum += n[i];
   }
   //console.log(sum);
@@ -50,8 +48,6 @@ function countVowels(str) {
   let vowels = ["a", "o", "i", "u", "e"];
   for (let i = 0; i < string.length; i++){
     if (vowels.includes(string[i])) {
-      //console.log(str[i]);
-      //console.log(i);
       count[string[i]] =(count[string[i]] == undefined ? 0 : count[string[i]]) + 1;
     }
   }
@@ -88,7 +84,6 @@ function removeDuplicates(arr) {
     if (!newArr.includes(arr[i])) {
       newArr.push(arr[i]);
     }
-    //console.log("this approach is not working for edg cases");
   }
   return newArr;
 }
