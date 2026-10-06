@@ -52,11 +52,41 @@ console.log(getLetterGrade(calculateAverage([])), "result of the 47line");
 
 
 
-function addStudent(name) {
-    if (typeof name !== "string" || name.trim() === "") {
+function addStudent(name, list) {
+       // console.log(typeof name, name);
+    if (typeof name !== "string" || name.trim() === "" || list.some(student => student.name === name.trim())){
         return null;
     }
-    return { name: name.trim(), grades: [] };
+
+    const student = { name: name.trim(), grades: [] };
+    list.push(student);
+    return list;
 }
 
-console.log(addStudent("      monica"));
+console.log(addStudent("      monica", students));
+console.log(addStudent("Anna",students),"line 63");
+console.log(addStudent("Anna", students),"line 64");
+
+
+function addGrade(list, name, grade) {
+    if (!Number.isFinite(grade) || grade < 0 || grade > 100) {
+        return null;
+    }
+
+    const student = list.find(s => s.name === name);
+    //console.log(typeof !student, !!student);
+    if (!student) {
+        return null;
+    }
+
+    student.grades.push(grade);
+    return student;
+}
+
+console.log(addGrade(students, "Anna", 54), "line 86");
+
+
+
+function getTopStudent() {
+    
+}
