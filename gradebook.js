@@ -1,5 +1,7 @@
 const students = [
-  { name: "Ann", grades: [90, 85, 100] },
+    { name: "Ann", grades: [90, 85, 100] },
+    { name: "Sasha", grades: [10, 10, 20] },
+  {name: "Dasha", grades: [10, 10, 20]},
   { name: "Ben", grades: [40, 55, 30] },
   { name: "Clara", grades: [70, 75, 80] },
 ];
@@ -87,6 +89,32 @@ console.log(addGrade(students, "Anna", 54), "line 86");
 
 
 
-function getTopStudent() {
+function getTopStudent(list) {
+    let topStudent = list[0];
+    for (let r = 0; r < list.length; r++){
+        if (list[r].grades > topStudent.grades) {
+            topStudent = list[r];
+        }
+    }
     
+    return topStudent;
 }
+
+console.log("lne 101: ", getTopStudent(students));
+
+function getFailingStudents(list) {
+    let names = [];
+    for (let s = 0; s < list.length; s++){
+        const student = list[s];
+        const average = calculateAverage(student.grades);
+
+        if (getLetterGrade(average) === "F") {
+            names.push({ name: student.name, "average": average });
+        }
+    }
+
+    return names;  
+}
+
+
+console.log("\n\n", getFailingStudents(students), "line 115");
