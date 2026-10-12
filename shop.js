@@ -11,3 +11,57 @@ const products = [
   { id: 8, name: "Monitor 27", price: 249.9, stock: 5, category: "electronics", tags: ["4k", "ips"] },
 ];
 
+//part 1: values, types, coercion
+
+const str = "Hello";
+const num = 10;
+const isReady = false;
+// x -  undefined;
+let x;
+const value = null;
+const bigNum = BigInt(232432423453231354757);
+
+
+console.log(typeof str);
+console.log(typeof num);
+console.log(typeof isReady);
+console.log(typeof x);
+console.log(typeof value);
+console.log(typeof bigNum);
+console.log(( [] , typeof ([] - [])));
+console.log("\n\n\n")
+
+console.log("Prediction");
+console.log("5" + 3);
+// + operator converts left side to the right, so in the end we have 53
+
+console.log([] - [], "line 38");
+// array is the object type, so we will have object object
+//now I tried and we have nothing 
+//why????
+
+console.log(0.1 + 0.2);
+// we will have 0.3 because we add one number to another
+
+console.log("5" - 3);
+//we will have 2,  because string will be converted to number
+
+
+console.log([] + {});
+// why, but we have [object Object]
+
+
+console.log(0.1 + 0.2 === 0.3);
+//first we will have 0.3 and then the result of comparison - false
+
+console.log(null + 1);
+// null is falsy, so + operator will convert it to 0, 1
+ 
+console.log(true + 1);
+//we will have 2, cuz' true will be 1
+
+console.log(undefined + 1);
+// we will have NaN
+
+console.log("b" + "a" ++ "a" + "a");
+// we have invalid expression
