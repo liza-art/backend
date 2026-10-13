@@ -63,5 +63,20 @@ console.log(true + 1);
 console.log(undefined + 1);
 // we will have NaN
 
-console.log("b" + "a" ++ "a" + "a");
+console.log("b" + "a"  + "a");
 // we have invalid expression
+
+
+
+function truthyReport(value) {
+  
+  let falsyValues = [false, 0, null, undefined, ""];
+  if (falsyValues.includes(value)) {
+    return "falsy";
+  }
+  return "truthy"
+}
+
+
+console.log(truthyReport(true));
+console.log(truthyReport(""));
